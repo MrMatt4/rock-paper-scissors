@@ -1,6 +1,6 @@
 function computerPlay() {
     let computerHand = Math.random();
-    switch (computerHand) {
+    switch (true) {
         case (computerHand < 0.33):
             console.log("Rock");
             break;
