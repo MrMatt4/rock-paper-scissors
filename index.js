@@ -12,7 +12,7 @@ function computerPlay() {
             console.log(computerHand);
             break;
     }
-    
+ return computerHand;   
 }
 
 console.log(computerPlay());
