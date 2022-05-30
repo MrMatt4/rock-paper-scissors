@@ -11,7 +11,19 @@ function computerPlay() {
             console.log("Paper");
             break;
     }
+
+    if (computerHand < 0.33) {
+        console.log(" less than 0.33");
+    }
+    else if (computerHand > 0.66) {
+        console.log(" more than 0.66");
+    }
+    else {
+        console.log(computerHand);
+    }
  return computerHand;   
+
+ 
 }
 
 console.log(computerPlay());
