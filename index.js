@@ -8,7 +8,7 @@ function computerPlay() {
             console.log("Scissors");
             break;
         default:
-            console.log(computerHand);
+            console.log("Paper");
             console.log(computerHand);
             break;
     }
