@@ -10,7 +10,8 @@ function computerPlay() {
         default:
             console.log("Paper");
             break;
-    } 
+    }
+    console.log(computerHand); 
 }
 
 console.log(computerPlay());
