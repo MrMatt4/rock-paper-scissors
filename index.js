@@ -46,7 +46,7 @@ function game() {
      for (let i = 0; i < 5; i++) {
         const playerSelection = window.prompt("Rock, paper or scissors?");
         const computerSelection = computerPlay();
-        return playRound(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
      }
 }
 
