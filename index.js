@@ -24,19 +24,21 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
-    if (playerSelection.includes("rock") && computerSelection.includes("scissors")) {
-        return "You Win! Rock beats Scissors";
+    if (playerSelection.includes("rock") && computerSelection.includes("scissors") ||
+        playerSelection.includes("paper") && computerSelection.includes("rock") ||
+        playerSelection.includes("scissors") && computerSelection.includes("paper")) {
+        return `You Win! Your ${playerSelection} beats ${computerSelection}`;
     }
     else if (playerSelection.includes("rock") && computerSelection.includes("paper")) {
-        return "You Lose! Paper beats Rock";
+        return `You Lose! ${computerSelection} beats your ${computerSelection}`;
     }
     else {
-        return "You Draw! Both drew Rock";
+        return `You Draw! Both drew ${computerSelection}`;
     }
 }
 
 
-const playerSelection = "rock";
+const playerSelection = window.prompt("Rock, paper or scissors?");
 const computerSelection = computerPlay();
 
 console.log(playRound(playerSelection, computerSelection));
