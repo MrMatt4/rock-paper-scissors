@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection.includes("rock") && computerSelection.includes("paper") ||
              playerSelection.includes("paper") && computerSelection.includes("scissors") ||
              playerSelection.includes("scissors") && computerSelection.includes("rock")) {
-        return `You Lose! ${computerSelection} beats your ${computerSelection}`;
+        return `You Lose! ${playerSelection} beats your ${computerSelection}`;
     }
     else {
         return `You Draw! Both drew ${computerSelection}`;
