@@ -1,6 +1,5 @@
 let computerValue;
 let computerSelection;
-let results;
 
 let output = document.getElementById("output");
 
