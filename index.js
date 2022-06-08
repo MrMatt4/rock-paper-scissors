@@ -26,10 +26,11 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    computerSelection = computerPlay();
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     let outputContent;
-    let output = document.getElementById("output").textContent(outputContent);
+    
     if (playerSelection.includes("rock") && computerSelection.includes("scissors") ||
         playerSelection.includes("paper") && computerSelection.includes("rock") ||
         playerSelection.includes("scissors") && computerSelection.includes("paper")) {
@@ -41,7 +42,6 @@ function playRound(playerSelection, computerSelection) {
             outputContent = `You win this round! ${playerSelection} beats your ${computerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
         }
        
-        return output;
     }
     else if (playerSelection.includes("rock") && computerSelection.includes("paper") ||
              playerSelection.includes("paper") && computerSelection.includes("scissors") ||
@@ -53,12 +53,11 @@ function playRound(playerSelection, computerSelection) {
         else {
             outputContent = `You lost this round! ${computerSelection} beats your ${playerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
         }
-        return output;
     }
     else {
         outputContent = `You Draw! Both drew ${computerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
-        return output;
     }
+    document.getElementById("output").textContent = outputContent;
 }
 
 document.getElementById("rock").addEventListener("click", playRound("rock", computerSelection));
