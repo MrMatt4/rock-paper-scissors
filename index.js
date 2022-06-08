@@ -1,4 +1,8 @@
 let computerValue;
+let computerSelection = computerPlay();
+let results;
+
+let playerCount, computerCount = 0;
 
 function computerPlay() {
     let computerHand = Math.random();
@@ -24,30 +28,42 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
+    let outputContent;
+    let output = document.getElementById("output").textContent(outputContent);
     if (playerSelection.includes("rock") && computerSelection.includes("scissors") ||
         playerSelection.includes("paper") && computerSelection.includes("rock") ||
         playerSelection.includes("scissors") && computerSelection.includes("paper")) {
-        return `You Win! Your ${playerSelection} beats ${computerSelection}`;
+        playerCount++;
+        if (playerCount == 5) {
+            outputContent = `You win this round! ${playerSelection} beats your ${computerSelection}. You have beat the computer by a score of 5 to ${computerCount}`;
+        }
+        else {
+            outputContent = `You Win The Game! ${playerSelection} beats your ${computerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
+        }
+       
+        return output;
     }
     else if (playerSelection.includes("rock") && computerSelection.includes("paper") ||
              playerSelection.includes("paper") && computerSelection.includes("scissors") ||
              playerSelection.includes("scissors") && computerSelection.includes("rock")) {
-        return `You Lose! ${playerSelection} beats your ${computerSelection}`;
+        computerCount++;
+        if (computerCount == 5) {
+            outputContent = `You Lose! ${computerSelection} beats your ${playerSelection}. You have lost by a score of 5 to ${playerCount}.`;
+        }
+        else {
+            outputContent = `You Lose! ${computerSelection} beats your ${playerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
+        }
+        return output;
     }
     else {
-        return `You Draw! Both drew ${computerSelection}`;
+        outputContent = `You Draw! Both drew ${computerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
+        return output;
     }
 }
 
-let computerSelection = computerPlay();
-
-let rockPlay = document.getElementById("rock").addEventListener("click", playRound("rock", computerSelection));
-let paperPlay = document.getElementById("paper").addEventListener("click", playRound("paper", computerSelection));
-let scissorsPlay = document.getElementById("scissors").addEventListener("click", playRound("scissors", computerSelection));
-
-console.log(rockPlay);
-console.log(paperPlay);
-console.log(scissorsPlay);
+document.getElementById("rock").addEventListener("click", playRound("rock", computerSelection));
+document.getElementById("paper").addEventListener("click", playRound("paper", computerSelection));
+document.getElementById("scissors").addEventListener("click", playRound("scissors", computerSelection));
 
 // function game() {
 //     let result =[];
