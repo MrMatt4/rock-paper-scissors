@@ -23,6 +23,7 @@ function playRound(playerSelection, computerSelection) {
         playerCount = ++playerCount;
         if (playerCount == 5) {
             outputContent = `You Win The Game! Your ${playerSelection} beats ${computerSelection}. You have beat the computer by a score of 5 to ${computerCount}`;
+            resetStatistics();
         }
         else {
             outputContent = `You win this round! Your ${playerSelection} beats ${computerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
@@ -35,6 +36,7 @@ function playRound(playerSelection, computerSelection) {
         computerCount = ++computerCount;
         if (computerCount == 5) {
             outputContent = `You Lose The Game! ${computerSelection} beats your ${playerSelection}. You have lost by a score of 5 to ${playerCount}.`;
+            resetStatistics();
         }
         else {
             outputContent = `You lost this round! ${computerSelection} beats your ${playerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
@@ -57,6 +59,11 @@ buttons.forEach((button) => {
     });
     console.log(button);
 })
+
+function resetStatistics() {
+    playerCount = 0;
+    computerCount = 0;
+}
 
 // function game() {
 //     let result =[];
