@@ -2,7 +2,8 @@ let computerValue;
 let computerSelection = computerPlay();
 let results;
 
-let playerCount, computerCount = 0;
+let playerCount = 0;
+let computerCount = 0;
 
 function computerPlay() {
     let computerHand = Math.random();
