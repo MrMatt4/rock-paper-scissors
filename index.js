@@ -35,10 +35,10 @@ function playRound(playerSelection, computerSelection) {
         playerSelection.includes("scissors") && computerSelection.includes("paper")) {
         playerCount++;
         if (playerCount == 5) {
-            outputContent = `You win this round! ${playerSelection} beats your ${computerSelection}. You have beat the computer by a score of 5 to ${computerCount}`;
+            outputContent = `You Win The Game! ${playerSelection} beats your ${computerSelection}. You have beat the computer by a score of 5 to ${computerCount}`;
         }
         else {
-            outputContent = `You Win The Game! ${playerSelection} beats your ${computerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
+            outputContent = `You win this round! ${playerSelection} beats your ${computerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
         }
        
         return output;
@@ -48,10 +48,10 @@ function playRound(playerSelection, computerSelection) {
              playerSelection.includes("scissors") && computerSelection.includes("rock")) {
         computerCount++;
         if (computerCount == 5) {
-            outputContent = `You Lose! ${computerSelection} beats your ${playerSelection}. You have lost by a score of 5 to ${playerCount}.`;
+            outputContent = `You Lose The Game! ${computerSelection} beats your ${playerSelection}. You have lost by a score of 5 to ${playerCount}.`;
         }
         else {
-            outputContent = `You Lose! ${computerSelection} beats your ${playerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
+            outputContent = `You lost this round! ${computerSelection} beats your ${playerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
         }
         return output;
     }
