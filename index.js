@@ -7,25 +7,10 @@ let output = document.getElementById("output");
 let playerCount = 0;
 let computerCount = 0;
 
-function computerPlay() {
-    let computerHand = Math.random();
-    
-    switch (true) {
-        case (computerHand < 0.33):
-            computerValue = "Rock";
-            console.log("Computer plays: Rock");
-            break;
-        case (computerHand > 0.66):
-            computerValue = "Scissors";
-            console.log("Computer plays: Scissors");
-            break;
-        default:
-            computerValue = "Paper";
-            console.log("Computer plays: Paper");
-            break;
-    }
- return computerValue;   
+const myArray = ["Rock", "Paper", "Scissors"];
 
+function computerPlay() {
+  return myArray[~~(Math.random() * myArray.length)];
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -36,7 +21,7 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection.includes("rock") && computerSelection.includes("scissors") ||
         playerSelection.includes("paper") && computerSelection.includes("rock") ||
         playerSelection.includes("scissors") && computerSelection.includes("paper")) {
-        playerCount++;
+        playerCount = playerCount++;
         if (playerCount == 5) {
             outputContent = `You Win The Game! ${playerSelection} beats your ${computerSelection}. You have beat the computer by a score of 5 to ${computerCount}`;
         }
@@ -48,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection.includes("rock") && computerSelection.includes("paper") ||
              playerSelection.includes("paper") && computerSelection.includes("scissors") ||
              playerSelection.includes("scissors") && computerSelection.includes("rock")) {
-        computerCount++;
+        computerCount = computerCount++;
         if (computerCount == 5) {
             outputContent = `You Lose The Game! ${computerSelection} beats your ${playerSelection}. You have lost by a score of 5 to ${playerCount}.`;
         }
