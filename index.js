@@ -63,6 +63,7 @@ buttons.forEach((button) => {
 function resetStatistics() {
     playerCount = 0;
     computerCount = 0;
+    output.textContent = "";
 }
 
 // function game() {
