@@ -41,9 +41,13 @@ function playRound(playerSelection, computerSelection) {
 
 let computerSelection = computerPlay();
 
-document.getElementById("rock").addEventListener("click", playRound("rock", computerSelection));
-document.getElementById("paper").addEventListener("click", playRound("paper", computerSelection));
-document.getElementById("scissors").addEventListener("click", playRound("scissors", computerSelection));
+let rockPlay = document.getElementById("rock").addEventListener("click", playRound("rock", computerSelection));
+let paperPlay = document.getElementById("paper").addEventListener("click", playRound("paper", computerSelection));
+let scissorsPlay = document.getElementById("scissors").addEventListener("click", playRound("scissors", computerSelection));
+
+console.log(rockPlay);
+console.log(paperPlay);
+console.log(scissorsPlay);
 
 // function game() {
 //     let result =[];
