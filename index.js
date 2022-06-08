@@ -1,6 +1,8 @@
 let computerValue;
-let computerSelection = computerPlay();
+let computerSelection;
 let results;
+
+let output = document.getElementById("output");
 
 let playerCount = 0;
 let computerCount = 0;
@@ -27,9 +29,8 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    computerSelection = computerPlay();
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    computerSelection = computerPlay().toLowerCase();
     let outputContent;
     
     if (playerSelection.includes("rock") && computerSelection.includes("scissors") ||
@@ -58,7 +59,7 @@ function playRound(playerSelection, computerSelection) {
     else {
         outputContent = `You Draw! Both drew ${computerSelection}. Score is ${playerCount} for you and ${computerCount} for the computer.`;
     }
-    document.getElementById("output").textContent = outputContent;
+    output.textContent = outputContent;
 }
 
 let buttons = document.querySelectorAll(".button");
