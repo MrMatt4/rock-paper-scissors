@@ -39,14 +39,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let result =[];
-     for (let i = 0; i < 5; i++) {
-        const playerSelection = window.prompt("Rock, paper or scissors?");
-        const computerSelection = computerPlay();
-        result += playRound(playerSelection, computerSelection);
-     }
-     return result;
-}
+let computerSelection = computerPlay();
 
-console.log(game());
+document.getElementById("rock").addEventListener("click", playRound("rock", computerSelection));
+document.getElementById("paper").addEventListener("click", playRound("paper", computerSelection));
+document.getElementById("scissors").addEventListener("click", playRound("scissors", computerSelection));
+
+// function game() {
+//     let result =[];
+//      for (let i = 0; i < 5; i++) {
+//         const playerSelection = window.prompt("Rock, paper or scissors?");
+//         const computerSelection = computerPlay();
+//         result += playRound(playerSelection, computerSelection);
+//      }
+//      return result;
+// }
+
+// console.log(game());
