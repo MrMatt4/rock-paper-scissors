@@ -61,9 +61,12 @@ function playRound(playerSelection, computerSelection) {
     document.getElementById("output").textContent = outputContent;
 }
 
-document.getElementById("rock").addEventListener("click", playRound("rock", computerSelection));
-document.getElementById("paper").addEventListener("click", playRound("paper", computerSelection));
-document.getElementById("scissors").addEventListener("click", playRound("scissors", computerSelection));
+let buttons = document.querySelectorAll(".button");
+
+buttons.forEach((button) => {
+    playerSelection = button.textContent;
+    button.addEventListener("click", playRound(playerSelection, computerSelection));
+})
 
 // function game() {
 //     let result =[];
