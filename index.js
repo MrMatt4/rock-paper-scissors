@@ -50,7 +50,9 @@ let buttons = document.querySelectorAll(".button");
 
 buttons.forEach((button) => {
     playerSelection = button.textContent;
-    button.addEventListener("click", playRound(playerSelection, computerSelection));
+    button.addEventListener("click", () => {
+        playRound(playerSelection, computerSelection);
+    });
     console.log(button);
 })
 
